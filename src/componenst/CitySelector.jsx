@@ -11,8 +11,11 @@ const CitySelector = ({ onCityChange }) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="d-flex justify-content-center mt-3 city-selector container-fluid">
-      <Form.Group className="mb-3">
+    <Form
+      onSubmit={handleSubmit}
+      className="d-flex justify-content-center align-items-center mt-3 city-selector container-fluid"
+    >
+      <Form.Group className="mb-3 pt-3">
         <Form.Control
           type="text"
           placeholder="Inserisci la tua città..."
@@ -22,7 +25,7 @@ const CitySelector = ({ onCityChange }) => {
           }}
         />
       </Form.Group>
-      <Button type="submit" className="btn btn-secondary ">
+      <Button type="submit" className="btn btn-secondary ms-3">
         Cerca
       </Button>
     </Form>

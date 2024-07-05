@@ -9,7 +9,7 @@ import MyNav from "./componenst/MyNav";
 import { Container } from "react-bootstrap";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./componenst/NotFound";
-import Detail from "./componenst/Detail";
+//import Detail from "./componenst/Detail";
 
 const App = () => {
   const [city, setCity] = useState("");
@@ -31,10 +31,10 @@ const App = () => {
           <Route path="/" element={<CitySelector onCityChange={setCity} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <WeatherInfo weather={weather} />
+        <Forecast forecast={forecast} />
       </BrowserRouter>
-      <Detail town={city} />
-      <WeatherInfo weather={weather} />
-      <Forecast forecast={forecast} />
+      {/* <Detail town={city} /> */}
     </Container>
   );
 };
