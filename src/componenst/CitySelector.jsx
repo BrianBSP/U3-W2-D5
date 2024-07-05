@@ -22,7 +22,9 @@ const CitySelector = ({ onCityChange }) => {
           }}
         />
       </Form.Group>
-      <Button type="submit">Cerca</Button>
+      <Button type="submit" className="btn btn-secondary ">
+        Cerca
+      </Button>
     </Form>
   );
 };

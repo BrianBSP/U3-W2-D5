@@ -5,8 +5,8 @@ const WeatherInfo = ({ weather }) => {
       {weather && (
         <>
           <h2>{weather.name}</h2>
-          <p>Temperature: {weather.main.temp} °C</p>
-          <p>Weather: {weather.weather[0].description}</p>
+          <p className="display-3">{weather.main.temp} °C</p>
+          <p>Meteo: {weather.weather[0].description}</p>
         </>
       )}
     </div>
