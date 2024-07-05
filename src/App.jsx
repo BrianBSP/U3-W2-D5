@@ -1,9 +1,12 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getForecast, getWeather } from "./weatherApi";
 import CitySelector from "./componenst/CitySelector";
 import WeatherInfo from "./componenst/WeatherInfo";
 import Forecast from "./componenst/Forecast";
+import MyNav from "./componenst/MyNav";
+import { Container } from "react-bootstrap";
 
 const App = () => {
   const [city, setCity] = useState("");
@@ -18,11 +21,12 @@ const App = () => {
   }, [city]);
 
   return (
-    <div>
+    <Container fluid>
+      <MyNav />
       <CitySelector onCityChange={setCity} />
       <WeatherInfo weather={weather} />
       <Forecast forecast={forecast} />
-    </div>
+    </Container>
   );
 };
 

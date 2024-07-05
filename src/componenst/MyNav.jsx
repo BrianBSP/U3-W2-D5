@@ -1,9 +1,9 @@
-import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 const MyNav = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
-      <Container className="d-flex align-items-center">
+      <Container>
         <Navbar.Brand href="#home">3Bri METEO</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -19,11 +19,6 @@ const MyNav = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Form className="d-flex">
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Control type="text" placeholder="Scrivi la tua città..." />
-          </Form.Group>
-        </Form>
       </Container>
     </Navbar>
   );

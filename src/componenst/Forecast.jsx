@@ -1,9 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 const Forecast = ({ forecast }) => {
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center forecast">
       {forecast && forecast.list && (
         <>
-          <h2>Forecast</h2>
+          <h2>Previsioni</h2>
           <ul>
             {forecast.list.slice(0, 5).map((item) => (
               <li key={item.dt}>

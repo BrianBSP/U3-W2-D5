@@ -1,6 +1,7 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 const WeatherInfo = ({ weather }) => {
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center weather-info">
       {weather && (
         <>
           <h2>{weather.name}</h2>
