@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ListGroup } from "react-bootstrap";
 const Forecast = ({ forecast }) => {
+  console.log(forecast);
   return (
     <div className="d-flex flex-column align-items-center forecast">
       {forecast && forecast.list && (
@@ -9,7 +10,8 @@ const Forecast = ({ forecast }) => {
           <ListGroup>
             {forecast.list.slice(0, 5).map((item) => (
               <ListGroup.Item key={item.dt}>
-                {new Date(item.dt * 1000).toLocaleDateString()} - {item.main.temp} °C
+                {new Date(item.dt * 1000).toLocaleDateString()} - {new Date(item.dt * 1000).toLocaleTimeString()} -{" "}
+                {Math.round(item.main.temp)} °C - <strong>{item.weather[0].description}</strong>
               </ListGroup.Item>
             ))}
           </ListGroup>
