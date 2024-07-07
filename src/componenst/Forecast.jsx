@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Col, Container, Row } from "react-bootstrap";
-import "index";
 
 const Forecast = ({ forecast }) => {
   console.log(forecast);
