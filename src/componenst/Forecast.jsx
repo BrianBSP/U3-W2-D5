@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import "index";
 
 const Forecast = ({ forecast }) => {
   console.log(forecast);
@@ -11,7 +12,7 @@ const Forecast = ({ forecast }) => {
           <Row className="justify-content-center">
             {forecast.list.slice(0, 5).map((item) => (
               <Col xs={12} md={2} xl={2} key={item.dt} className="gx-2">
-                <Card className="forecast-card text-center">
+                <Card className="text-center">
                   <Card.Title className="pt-2">{new Date(item.dt * 1000).toLocaleDateString()}</Card.Title>
                   <Card.Subtitle>{new Date(item.dt * 1000).toLocaleTimeString()}</Card.Subtitle>
                   <Card.Body className="p-0">
@@ -29,16 +30,5 @@ const Forecast = ({ forecast }) => {
     </Container>
   );
 };
-
-{
-  /* <ListGroup>
-            {forecast.list.slice(0, 5).map((item) => (
-              <ListGroup.Item key={item.dt}>
-                {new Date(item.dt * 1000).toLocaleDateString()} - {new Date(item.dt * 1000).toLocaleTimeString()} -{" "}
-                {Math.round(item.main.temp)} °C - <strong>{item.weather[0].description}</strong>
-              </ListGroup.Item>
-            ))}
-          </ListGroup> */
-}
 
 export default Forecast;
