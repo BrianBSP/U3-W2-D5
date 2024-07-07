@@ -2,14 +2,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getForecast, getWeather } from "./weatherApi";
-import CitySelector from "./componenst/CitySelector";
-import WeatherInfo from "./componenst/WeatherInfo";
-import Forecast from "./componenst/Forecast";
-import MyNav from "./componenst/MyNav";
 import { Container } from "react-bootstrap";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NotFound from "./componenst/NotFound";
-//import Detail from "./componenst/Detail";
+import { Route, Routes } from "react-router-dom";
+import Forecast from "./componenst/Forecast";
+import Detail from "./componenst/Detail";
+import SearchCity from "./componenst/SearchCity";
+import WeatherToday from "./componenst/WeatherToday";
+import MyNavbar from "./componenst/MyNavbar";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   const [city, setCity] = useState("");
@@ -24,17 +24,23 @@ const App = () => {
   }, [city]);
 
   return (
-    <Container fluid>
+    <Container fluid className="bg-white p-4 rounded shadow-md">
       <BrowserRouter>
-        <MyNav city={city} />
+        <MyNavbar city={city} />
         <Routes>
-          <Route path="/" element={<CitySelector onCityChange={setCity} />} />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchCity onCityChange={setCity} />
+                <WeatherToday weather={weather} />
+                <Forecast forecast={forecast} />
+              </>
+            }
+          />
+          <Route path="/detail/:city" element={<Detail />} />
         </Routes>
-        <WeatherInfo weather={weather} />
-        <Forecast forecast={forecast} />
       </BrowserRouter>
-      {/* <Detail town={city} /> */}
     </Container>
   );
 };
